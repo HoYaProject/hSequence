@@ -7,7 +7,7 @@ This project is HoYa's Sequence game.
 - [x] Setup Project
 - [x] Create Board/Card/Player
 - [x] Setup Game
-- [ ] Play and Draw Card
+- [x] Play and Draw Card
 - [ ] Check Sequence
 - [ ] Finish Game
 - [ ] Save/Load Game

@@ -1,9 +1,6 @@
 import random
 from defines import *
 
-# Spade, Heart: Side
-# Clova, Diamond: Front
-
 
 def game_init(total_player: int, player_idx: int):
     card: [int] = CARD_SET * 2
@@ -52,3 +49,22 @@ def game_init(total_player: int, player_idx: int):
         players.append(player)
 
     return card, board, players
+
+
+def game_check_card(board: dict, card: [str], hand: [str]):
+    for r in range(BOARD_ROW):
+        for c in range(BOARD_COL):
+            for elem in hand:
+                if board["base"][r][c] == elem and board["played"][r][c] == None:
+                    hand.remove(elem)
+                    hand.append(card.pop())
+
+
+# Clova, Diamond: Front
+def game_play_add_card(board: dict, color: str, row: int, col: int):
+    board["played"][row][col] = f"{color}F"
+
+
+# Spade, Heart: Side
+def game_play_remove_card(board: dict, row: int, col: int):
+    board["played"][row][col] = None
